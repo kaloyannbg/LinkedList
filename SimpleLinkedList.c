@@ -136,6 +136,11 @@ void deleteNode(t_node **head, t_node **tail)
     }
 }
 
+void freeNodes(t_node *head)
+{
+    t_node *temp = head;
+}
+
 int main(int argc, char const *argv[])
 {
     t_node *head = NULL;
