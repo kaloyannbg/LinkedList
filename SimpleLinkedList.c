@@ -60,6 +60,9 @@ void printNodes(t_node *head)
 
 void searchNode(t_node *head)
 {
+
+    printNodes(head);
+
     if (head == NULL)
     {
         printf(" -- Sorry, but node is not initialized. -- \n");
@@ -189,13 +192,7 @@ int main(int argc, char const *argv[])
         system("pause");
     }
 
-    // printNodes(head);
-
-    // // searchNode(head);
-
-    // deleteNode(&head, &tail);
-
-    // printNodes(head);
+    freeNodes(head);
 
     return 0;
 }
