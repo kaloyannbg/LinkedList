@@ -141,18 +141,49 @@ int main(int argc, char const *argv[])
     t_node *head = NULL;
     t_node *tail = NULL;
 
-    for (int i = 0; i < 5; i++)
+    int iChoice = -1;
+
+    while (iChoice != 0)
     {
-        insertNode(&head, &tail);
+        system("clear");
+        printf("1. Print nodes. \n");
+        printf("2. Insert node. \n");
+        printf("3. Search node. \n");
+        printf("4. Delete node. \n\n");
+
+        printf(" -- Enter your choice: ");
+        scanf("%d", &iChoice);
+
+        switch (iChoice)
+        {
+        case 1:
+            printNodes(head);
+            break;
+        case 2:
+            insertNode(&head, &tail);
+            break;
+        case 3:
+            searchNode(head);
+        case 4:
+            deleteNode(&head, &tail);
+            break;
+        case 0:
+        printf("\n -- Bye! -- \n");
+        break;
+        default:
+            printf("\n -- Invalid choice! -- \n");
+            break;
+        }
+        system("pause");
     }
 
-    printNodes(head);
+    // printNodes(head);
 
-    // searchNode(head);
+    // // searchNode(head);
 
-    deleteNode(&head, &tail);
+    // deleteNode(&head, &tail);
 
-    printNodes(head);
+    // printNodes(head);
 
     return 0;
 }
