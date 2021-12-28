@@ -44,20 +44,26 @@ void printNodes(t_node *head)
         return;
     }
 
-    printf("  ");
+    printf("\n  [");
 
     while (temp != NULL)
     {
-        printf("%d | ", temp->data);
+        printf(" %d", temp->data);
         temp = temp->next;
+        if (temp != NULL)
+        {
+            putchar(',');
+        }
     }
+    printf(" ]\n\n");
 }
 
 void searchNode(t_node *head)
 {
     if (head == NULL)
     {
-        printf(" -- Sorry, but node is not initialized. ");
+        printf(" -- Sorry, but node is not initialized. -- \n");
+        return;
     }
 
     t_node *temp = head;
