@@ -44,18 +44,14 @@ void printNodes(t_node *head)
         return;
     }
 
-    printf("\n  [");
+    printf("\n");
 
     while (temp != NULL)
     {
-        printf(" %d", temp->data);
+        printf("%-7d -> %d \n", temp->data, &temp->data);
         temp = temp->next;
-        if (temp != NULL)
-        {
-            putchar(',');
-        }
     }
-    printf(" ]\n\n");
+    printf("\n");
 }
 
 void searchNode(t_node *head)
@@ -148,6 +144,20 @@ void deleteNode(t_node **head, t_node **tail)
 void freeNodes(t_node *head)
 {
     t_node *temp = head;
+
+    if (temp == NULL)
+    {
+        printf("\n -- Do not have Nodes for clean up. --\n\n");
+        return;
+    }
+
+    while (temp != NULL)
+    {
+        temp = temp->next;
+        free(head);
+        head = temp;
+    }
+    printf("\n -- Sucesfully clean up the nodes! -- \n\n");
 }
 
 int main(int argc, char const *argv[])
@@ -189,7 +199,10 @@ int main(int argc, char const *argv[])
             printf("\n -- Invalid choice! -- \n");
             break;
         }
-        system("pause");
+        if (iChoice != 0)
+        {
+            system("pause");
+        }
     }
 
     freeNodes(head);
