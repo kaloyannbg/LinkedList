@@ -164,12 +164,13 @@ int main(int argc, char const *argv[])
             break;
         case 3:
             searchNode(head);
+            break;
         case 4:
             deleteNode(&head, &tail);
             break;
         case 0:
-        printf("\n -- Bye! -- \n");
-        break;
+            printf("\n -- Bye! -- \n");
+            break;
         default:
             printf("\n -- Invalid choice! -- \n");
             break;
